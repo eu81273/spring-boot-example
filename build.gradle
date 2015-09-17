@@ -14,7 +14,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'spring-boot-sample'
+    baseName = 'spring-boot-example'
     version =  '0.0.1-SNAPSHOT'
 }
 
