@@ -1,24 +1,24 @@
 ## ItelliJ IDEA Community Edition 설치 직후 설정
 
-1. IntelliJ IDEA 를 실행합니다. "Complete Installation" 대화 상자가 표시되면 아무 것도 변경하지 않고 "OK"버튼을 클릭합니다.
-2. "Welcome to IntelliJ IDEA" 화면으로 돌아갑니다. 화면 하단의 Configure -> Project Defaults -> Project Structure를 선택합니다.
-3. "Project Structure" 대화 상자가 표시됩니다. 다음 설정을 한 후 "OK"버튼을 클릭합니다.
-4. Project Settings -> Project -> "Project SDK "의 "New ... " -> " JDK "을 선택한 후 표시된 "Select Home Directory for JDK " 대화 상자에서 JDK가 설치된 경로를 선택하고 "OK"버튼 를 클릭합니다.
-5. Project language level 에서 8-Lambdas, type annotations etc. 를 선택합니다.
+* IntelliJ IDEA 를 실행합니다. "Complete Installation" 대화 상자가 표시되면 아무 것도 변경하지 않고 "OK"버튼을 클릭합니다.
+* "Welcome to IntelliJ IDEA" 화면으로 돌아갑니다. 화면 하단의 Configure -> Project Defaults -> Project Structure를 선택합니다.
+* "Project Structure" 대화 상자가 표시됩니다. 다음 설정을 한 후 "OK"버튼을 클릭합니다.
+* Project Settings -> Project -> "Project SDK "의 "New ... " -> " JDK "을 선택한 후 표시된 "Select Home Directory for JDK " 대화 상자에서 JDK가 설치된 경로를 선택하고 "OK"버튼 를 클릭합니다.
+* Project language level 에서 8-Lambdas, type annotations etc. 를 선택합니다.
 
 
 ## IntelliJ IDEA 에서 프로젝트 생성
 
-1. IntelliJ IDEA를 시작합니다.
-2. 화면 중앙의 "Create New Project"를 클릭합니다.
-3. "New Project" 화면이 표시됩니다. 화면 왼쪽 목록에서 "Gradle"를 선택합니다.
-4. 화면 오른쪽에 Gradle Project 설정 화면이 표시됩니다. "Create directories for empty content roots automatically"을 체크한 후 "Next"버튼을 클릭합니다. (프로젝트의 src 디렉토리가 자동으로 생성됩니다)
-5. 프로젝트 이름과 디렉토리를 입력하는 화면이 표시됩니다. 값을 입력 후 "Finish"버튼을 클릭합니다. "Directory Does Not Exist" 대화 상자가 나타나면 "OK"버튼을 클릭합니다.
-6. IntelliJ IDEA의 메인 화면이 표시됩니다.
+* IntelliJ IDEA를 시작합니다.
+* 화면 중앙의 "Create New Project"를 클릭합니다.
+* "New Project" 화면이 표시됩니다. 화면 왼쪽 목록에서 "Gradle"를 선택합니다.
+* 화면 오른쪽에 Gradle Project 설정 화면이 표시됩니다. "Create directories for empty content roots automatically"을 체크한 후 "Next"버튼을 클릭합니다. (프로젝트의 src 디렉토리가 자동으로 생성됩니다)
+* 프로젝트 이름과 디렉토리를 입력하는 화면이 표시됩니다. 값을 입력 후 "Finish"버튼을 클릭합니다. "Directory Does Not Exist" 대화 상자가 나타나면 "OK"버튼을 클릭합니다.
+* IntelliJ IDEA의 메인 화면이 표시됩니다.
 
 ## Spring Boot + Mustache 기본 설정
 
-1. build.gradle 파일을 열어서 아래의 내용으로 변경합니다.
+* build.gradle 파일을 열어서 아래의 내용으로 변경합니다. 
 ```gradle
 buildscript {
     repositories {
@@ -58,8 +58,8 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 ```
-2. 화면 왼쪽의 Project View에서 다음 계층에 있는 java 를 선택한 후 적절한 패키지를 생성한 뒤, 생성된 패키지에서 "New" -> "Java Class" 를 선택합니다. "Create New Class" 대화 상자가 나타나면 Application 입력 한 후 "OK" 버튼을 클릭합니다.
-3. Application.java 파일을 열어서 아래의 내용으로 변경합니다.
+* 화면 왼쪽의 Project View에서 다음 계층에 있는 java 를 선택한 후 적절한 패키지를 생성한 뒤, 생성된 패키지에서 "New" -> "Java Class" 를 선택합니다. "Create New Class" 대화 상자가 나타나면 Application 입력 한 후 "OK" 버튼을 클릭합니다.
+* Application.java 파일을 열어서 아래의 내용으로 변경합니다.
 ```java
 package example;
 
@@ -75,8 +75,8 @@ public class Application {
 
 }
 ```
-4. 3번에서 생성한 패키지의 하위에 web 패키지를 생성하고, "New" -> "Java Class" 를 선택합니다. "Create New Class" 대화 상자가 나타나면 TestController 입력 한 후 "OK" 버튼을 클릭합니다.
-5. TestController.java 파일을 열어서 아래의 내용으로 변경합니다.
+* 위에서 생성한 패키지의 하위에 web 패키지를 생성하고, "New" -> "Java Class" 를 선택합니다. "Create New Class" 대화 상자가 나타나면 TestController 입력 한 후 "OK" 버튼을 클릭합니다.
+* TestController.java 파일을 열어서 아래의 내용으로 변경합니다.
 ```java
 package example.web;
 
@@ -107,7 +107,7 @@ public class TestController {
     }
 }
 ```
-6. resources 디렉토리 아래에 templates 디렉토리를 만들고 여기에 아래 두 개의 HTML 파일을 생성합니다.
+* resources 디렉토리 아래에 templates 디렉토리를 만들고 여기에 아래 두 개의 HTML 파일을 생성합니다. 
 
 **home.html**
 ```html
@@ -136,5 +136,4 @@ public class TestController {
 </body>
 </html>
 ```
-
-7. gradle 빌드를 한 후, Application 을 실행하면 localhost:8080 으로 웹서버에 연결할 수 있습니다.
+* gradle 빌드를 한 후, Application 을 실행하면 localhost:8080 으로 웹서버에 연결할 수 있습니다.
