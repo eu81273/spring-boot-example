@@ -32,6 +32,5 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:1.2.0.RELEASE")
     compile("org.springframework.boot:spring-boot-starter-mustache:1.2.5.RELEASE")
-    compile("org.springframework.boot:spring-boot-devtools")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
