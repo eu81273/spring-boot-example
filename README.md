@@ -18,7 +18,7 @@
 
 ## Spring Boot + Mustache 기본 설정
 
-* build.gradle 파일을 열어서 아래의 내용으로 변경합니다. 
+* build.gradle 파일을 열어서 아래의 내용으로 변경합니다.
 ```gradle
 buildscript {
     repositories {
@@ -81,6 +81,7 @@ public class Application {
 package example.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -92,9 +93,17 @@ public class TestController {
 
     @RequestMapping("/test")
     @ResponseBody
-    public String test () {
+    public String test() {
+        return "this is '/test' page.";
+    }
 
-        return "이것은 /test 페이지입니다.";
+    @RequestMapping("/json/{name}")
+    @ResponseBody
+    public Person json(@PathVariable String name) {
+        Person person = new Person();
+        person.setName(name);
+        person.setAge(50);
+        return person;
     }
 
     @RequestMapping("/")
@@ -102,12 +111,39 @@ public class TestController {
         model.put("time", new Date());
         model.put("message", "Hello World");
         model.put("title", "Hello App");
-
         return "home";
     }
 }
 ```
-* resources 디렉토리 아래에 templates 디렉토리를 만들고 여기에 아래 두 개의 HTML 파일을 생성합니다. 
+* web 패키지에서 "New" -> "Java Class" 를 선택합니다. "Create New Class" 대화 상자가 나타나면 Person 입력 한 후 "OK" 버튼을 클릭합니다.
+* Person.java 파일을 열어서 아래의 내용으로 변경합니다.
+```java
+package example.web;
+
+public class Person {
+
+    private String name;
+    private Integer age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+}
+```
+* resources 디렉토리 아래에 templates 디렉토리를 만들고 여기에 아래 두 개의 HTML 파일을 생성합니다.
 
 **home.html**
 ```html
